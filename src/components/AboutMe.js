@@ -43,7 +43,7 @@ const AboutMe = ({ onClose }) => (
             Falo que sou front-end mas tento centralizar uma div desde 2014.
           </p>
           <p>
-            Atualmente to fazendo isso no
+            Atualmente faço isso no
             <a href="https://github.com/Gympass/yoga">Yoga</a> e quem me paga é
             a Gympass.
           </p>
