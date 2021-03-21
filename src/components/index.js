@@ -1,3 +1,4 @@
-import ShortcutList from './ShoutcutList';
+import ShortcutList from './ShortcutList';
+import AboutMe from './AboutMe';
 
-export { ShortcutList };
+export { ShortcutList, AboutMe };
