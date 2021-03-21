@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { List, Modal, Frame, Fieldset, Icon } from '@react95/core';
 
 const SocialMediaListItem = styled.li`
+  display: flex;
   margin-bottom: 6px;
 
   i {
