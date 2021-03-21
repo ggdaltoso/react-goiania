@@ -33,7 +33,14 @@ const AboutMe = ({ onClose }) => (
       p={3}
     >
       <Frame boxShadow="none" bg="transparent" display="flex">
-        <Frame width="282px" height="280px" boxShadow="in" flexShrink="0">
+        <Frame
+          width="275px"
+          height="275px"
+          boxShadow="in"
+          flexShrink="0"
+          pt={1}
+          pl={1}
+        >
           <img alt="foto de Gabriel Daltoso" src="/imgs/eu.jpg" width="100%" />
         </Frame>
 
