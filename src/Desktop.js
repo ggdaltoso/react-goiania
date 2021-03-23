@@ -5,7 +5,7 @@ import { ClippyProvider } from '@react95/clippy';
 
 import '@react95/icons/icons.css';
 
-import { ShortcutList, AboutMe } from './components';
+import { ShortcutList, AboutMe, History } from './components';
 
 const AppStyle = createGlobalStyle`
   image-rendering: pixelated;
@@ -23,6 +23,7 @@ const Desktop = styled.main`
 
 function App() {
   const [showAboutMe, toggleShowAboutMe] = useState(false);
+  const [showHistory, toggleShowHistory] = useState(false);
 
   return (
     <ThemeProvider>
@@ -39,11 +40,16 @@ function App() {
             >
               ggdaltoso
             </ShortcutList.Shortcut>
-            <ShortcutList.Shortcut tabIndex={1} who="React95-logo.png">
+            <ShortcutList.Shortcut
+              tabIndex={1}
+              who="React95-logo.png"
+              onDoubleClick={() => toggleShowHistory(true)}
+            >
               React95
             </ShortcutList.Shortcut>
           </ShortcutList>
           {showAboutMe && <AboutMe onClose={() => toggleShowAboutMe(false)} />}
+          {showHistory && <History onClose={() => toggleShowHistory(false)} />}
         </Desktop>
 
         <TaskBar
