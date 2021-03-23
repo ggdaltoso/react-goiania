@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react95/clippy": "^1.0.3",
     "@react95/core": "^3.0.7",
     "@react95/icons": "^1.0.3",
     "@testing-library/jest-dom": "^5.11.4",
