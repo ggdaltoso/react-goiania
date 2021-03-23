@@ -23,7 +23,7 @@ const Desktop = styled.main`
 
 function App() {
   const [showAboutMe, toggleShowAboutMe] = useState(false);
-  const [showHistory, toggleShowHistory] = useState(false);
+  const [showHistory, toggleShowHistory] = useState(true);
 
   return (
     <ThemeProvider>

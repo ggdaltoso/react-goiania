@@ -19,7 +19,6 @@ const AboutMe = ({ onClose }) => {
   const { clippy } = useClippy();
 
   useEffect(() => {
-    console.log(clippy);
     clippy.play('Wave');
   }, [clippy]);
 

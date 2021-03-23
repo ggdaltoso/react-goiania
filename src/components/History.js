@@ -4,6 +4,16 @@ import { Button, Modal } from '@react95/core';
 import { useClippy } from '@react95/clippy';
 import styled from 'styled-components';
 
+import {
+  Birth,
+  FirstContrib,
+  Future,
+  Nomination,
+  Nowadays,
+  Reward,
+  Why,
+} from './Steps';
+
 const WizardControles = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -27,32 +37,44 @@ const History = ({ onClose }) => {
   const { clippy } = useClippy();
 
   useEffect(() => {
-    console.log(clippy);
-    clippy.play('Writing');
+    if (clippy) clippy.play('Writing');
   }, [clippy]);
 
   return (
     <Modal
-      width="550"
+      width="1000"
+      height="600"
       icon="access_219_32x32_4bit"
       title="React95 - a história"
       closeModal={onClose}
       style={{
         position: 'absolute',
-        left: '20%',
+        left: '10%',
         top: '20%',
       }}
     >
       <Wizard>
         <Steps>
-          <Step id="gandalf">
-            <p>React95</p>
+          <Step id="birth">
+            <Birth />
           </Step>
-          <Step id="dumbledore">
-            <p>Ganhou</p>
+          <Step id="why">
+            <Why />
           </Step>
-          <Step id="ice king">
-            <p>Premios</p>
+          <Step id="firstContrib">
+            <FirstContrib />
+          </Step>
+          <Step id="nomination">
+            <Nomination />
+          </Step>
+          <Step id="reward">
+            <Reward />
+          </Step>
+          <Step id="nowadays">
+            <Nowadays />
+          </Step>
+          <Step id="future">
+            <Future />
           </Step>
         </Steps>
         <Navigation />
