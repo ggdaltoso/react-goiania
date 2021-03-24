@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.c60ab3d8.chunk.js",
-    "main.js.map": "/static/js/main.c60ab3d8.chunk.js.map",
+    "main.js": "/static/js/main.4d1d4488.chunk.js",
+    "main.js.map": "/static/js/main.4d1d4488.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8aecea55.js",
     "runtime-main.js.map": "/static/js/runtime-main.8aecea55.js.map",
     "static/css/2.7145868b.chunk.css": "/static/css/2.7145868b.chunk.css",
-    "static/js/2.01641556.chunk.js": "/static/js/2.01641556.chunk.js",
-    "static/js/2.01641556.chunk.js.map": "/static/js/2.01641556.chunk.js.map",
+    "static/js/2.53893bd2.chunk.js": "/static/js/2.53893bd2.chunk.js",
+    "static/js/2.53893bd2.chunk.js.map": "/static/js/2.53893bd2.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.7145868b.chunk.css.map": "/static/css/2.7145868b.chunk.css.map",
-    "static/js/2.01641556.chunk.js.LICENSE.txt": "/static/js/2.01641556.chunk.js.LICENSE.txt",
+    "static/js/2.53893bd2.chunk.js.LICENSE.txt": "/static/js/2.53893bd2.chunk.js.LICENSE.txt",
     "static/media/MS-Sans-Serif.30dfad5d.eot": "/static/media/MS-Sans-Serif.30dfad5d.eot",
     "static/media/MS-Sans-Serif.4fb9ed0f.woff2": "/static/media/MS-Sans-Serif.4fb9ed0f.woff2",
     "static/media/MS-Sans-Serif.82eeac7b.woff": "/static/media/MS-Sans-Serif.82eeac7b.woff",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.8aecea55.js",
     "static/css/2.7145868b.chunk.css",
-    "static/js/2.01641556.chunk.js",
-    "static/js/main.c60ab3d8.chunk.js"
+    "static/js/2.53893bd2.chunk.js",
+    "static/js/main.4d1d4488.chunk.js"
   ]
 }
