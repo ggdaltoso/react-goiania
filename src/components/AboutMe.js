@@ -53,7 +53,7 @@ const AboutMe = ({ onClose }) => {
           >
             <img
               alt="foto de Gabriel Daltoso"
-              src="/imgs/eu.jpg"
+              src="/imgs/eu.png"
               width="100%"
             />
           </Frame>

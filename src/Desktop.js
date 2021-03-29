@@ -35,7 +35,7 @@ function App() {
           <ShortcutList>
             <ShortcutList.Shortcut
               tabIndex={0}
-              who="eu.jpg"
+              who="eu.png"
               onDoubleClick={() => toggleShowAboutMe(true)}
             >
               ggdaltoso
