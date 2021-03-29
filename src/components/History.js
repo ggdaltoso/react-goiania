@@ -11,7 +11,6 @@ import {
   Nomination,
   Nowadays,
   Reward,
-  Why,
 } from './Steps';
 
 const WizardControles = styled.div`
@@ -57,9 +56,6 @@ const History = ({ onClose }) => {
         <Steps>
           <Step id="birth">
             <Birth />
-          </Step>
-          <Step id="why">
-            <Why />
           </Step>
           <Step id="firstContrib">
             <FirstContrib />
