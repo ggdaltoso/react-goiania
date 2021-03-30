@@ -4,14 +4,9 @@ import { Button, Modal } from '@react95/core';
 import { useClippy } from '@react95/clippy';
 import styled from 'styled-components';
 
-import {
-  Birth,
-  FirstContrib,
-  Future,
-  Nomination,
-  Nowadays,
-  Reward,
-} from './Steps';
+import { Birth, FirstContrib, Future, Nowadays, Reward } from './Steps';
+
+import { DivImage, Container } from './Steps/common';
 
 const WizardControles = styled.div`
   display: flex;
@@ -61,10 +56,28 @@ const History = ({ onClose }) => {
             <FirstContrib />
           </Step>
           <Step id="nomination">
-            <Nomination />
+            <Container>
+              <DivImage
+                title="Foto de uma caneca de café e a conferência de fundo"
+                src="/imgs/conference/cheguei.jpg"
+              />
+            </Container>
+          </Step>
+          <Step id="winner">
+            <Container>
+              <DivImage
+                title="O painel da conferência mostrando quem ganhou o prêmio"
+                src="/imgs/conference/winner.jpg"
+              />
+            </Container>
           </Step>
           <Step id="reward">
-            <Reward />
+            <Container>
+              <DivImage
+                title="Eu e o Allysson em cima do palco muito emocionados em ter ganhado o prêmio"
+                src="/imgs/conference/ganhei_mano.jpg"
+              />
+            </Container>
           </Step>
           <Step id="nowadays">
             <Nowadays />

@@ -65,4 +65,14 @@ const Fade = ({ show, children }) => {
   );
 };
 
-export { Container, Fade };
+const DivImage = styled.div`
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('${({ src }) => src}');
+`;
+
+export { Container, Fade, DivImage };

@@ -27,10 +27,9 @@ function App() {
 
   return (
     <ThemeProvider>
+      <GlobalStyle />
+      <AppStyle />
       <ClippyProvider>
-        <GlobalStyle />
-        <AppStyle />
-
         <Desktop>
           <ShortcutList>
             <ShortcutList.Shortcut

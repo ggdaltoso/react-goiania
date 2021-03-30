@@ -53,9 +53,11 @@ const Birth = () => (
           <Checkbox checked={false}>
             <i>TreeShaking</i>
           </Checkbox>
+          <Checkbox checked={false}>
+            <i>...</i>
+          </Checkbox>
         </CheckboxList>
 
-        <br />
         <br />
         <br />
         <br />
