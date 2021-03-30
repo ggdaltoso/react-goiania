@@ -69,7 +69,6 @@ const Birth = () => (
         <br />
         <br />
         <br />
-        <br />
 
         <p>Ninguém sabia nem por onde começar!</p>
       </Frame>

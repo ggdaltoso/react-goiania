@@ -4,7 +4,7 @@ import { Button, Modal } from '@react95/core';
 import { useClippy } from '@react95/clippy';
 import styled from 'styled-components';
 
-import { Birth, FirstContrib, Future, Nowadays, Community } from './Steps';
+import { Birth, FirstContrib, Community } from './Steps';
 
 import { DivImage, Container } from './Steps/common';
 
@@ -13,14 +13,22 @@ const WizardControles = styled.div`
   justify-content: flex-end;
 `;
 
-const Navigation = () => (
+const Navigation = ({ onClose }) => (
   <WithWizard
     render={({ next, previous, step, steps }) => (
       <WizardControles>
-        {steps.indexOf(step) > 0 && <Button onClick={previous}>Back</Button>}
+        {steps.indexOf(step) > 0 && (
+          <Button onClick={previous} style={{ marginRight: 8 }}>
+            Voltar
+          </Button>
+        )}
 
         {steps.indexOf(step) < steps.length - 1 && (
-          <Button onClick={next}>Next</Button>
+          <Button onClick={next}>Avançar</Button>
+        )}
+
+        {steps.indexOf(step) === steps.length - 1 && (
+          <Button onClick={onClose}>Finalizar</Button>
         )}
       </WizardControles>
     )}
@@ -82,14 +90,8 @@ const History = ({ onClose }) => {
           <Step id="community">
             <Community />
           </Step>
-          <Step id="nowadays">
-            <Nowadays />
-          </Step>
-          <Step id="future">
-            <Future />
-          </Step>
         </Steps>
-        <Navigation />
+        <Navigation onClose={onClose} />
       </Wizard>
     </Modal>
   );

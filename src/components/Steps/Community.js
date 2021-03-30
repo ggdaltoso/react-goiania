@@ -10,6 +10,9 @@ const CommunityGuy = ({ src, title, twitter }) => (
         height={225}
         alt={`Foto com ${title}`}
         src={`/imgs/${src}.jpg`}
+        style={{
+          marginBottom: -1,
+        }}
       />
     </Frame>
 
