@@ -43,25 +43,42 @@ const ShortcutImg = styled.div`
   width: 50px;
 `;
 
-const Shortcut = ({ children, who, ...rest }) => (
+const Shortcut = ({ children, who, icon, ...rest }) => (
   <Item {...rest}>
     <ShortcutImg>
-      <div
-        style={{
-          width: 50,
-          height: 50,
-          backgroundImage: `url(/imgs/${who})`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }}
-      />
+      {who && (
+        <div
+          style={{
+            width: 50,
+            height: 50,
+            backgroundImage: `url(/imgs/${who})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          }}
+        />
+      )}
+      {icon && (
+        <Icon
+          name={icon}
+          style={{
+            width: 50,
+            height: 50,
+          }}
+        />
+      )}
       <Icon
         style={{ position: 'absolute', bottom: 0, left: 0 }}
         name="shortcut_32x32_4bit"
       />
     </ShortcutImg>
-    <p>{children}</p>
+    <p
+      style={{
+        textAlign: 'center',
+      }}
+    >
+      {children}
+    </p>
   </Item>
 );
 

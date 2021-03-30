@@ -5,7 +5,7 @@ import { ClippyProvider } from '@react95/clippy';
 
 import '@react95/icons/icons.css';
 
-import { ShortcutList, AboutMe, History } from './components';
+import { ShortcutList, AboutMe, History, IE } from './components';
 
 const AppStyle = createGlobalStyle`
   image-rendering: pixelated;
@@ -24,6 +24,7 @@ const Desktop = styled.main`
 function App() {
   const [showAboutMe, toggleShowAboutMe] = useState(false);
   const [showHistory, toggleShowHistory] = useState(false);
+  const [showFuture, toggleShowFuture] = useState(false);
 
   return (
     <ThemeProvider>
@@ -46,9 +47,17 @@ function App() {
             >
               React95
             </ShortcutList.Shortcut>
+            <ShortcutList.Shortcut
+              tabIndex={1}
+              icon="mshtml_32528_48x48_4bit"
+              onDoubleClick={() => toggleShowFuture(true)}
+            >
+              Internet Explorer
+            </ShortcutList.Shortcut>
           </ShortcutList>
           {showAboutMe && <AboutMe onClose={() => toggleShowAboutMe(false)} />}
           {showHistory && <History onClose={() => toggleShowHistory(false)} />}
+          {showFuture && <IE onClose={() => toggleShowFuture(false)} />}
         </Desktop>
 
         <TaskBar

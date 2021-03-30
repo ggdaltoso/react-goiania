@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useClippy } from '@react95/clippy';
 import { Frame, Tabs, Tab, Icon } from '@react95/core';
 
 import { Container } from './common';
@@ -45,21 +47,29 @@ const CommunityGuy = ({ src, title, twitter }) => (
   </Frame>
 );
 
-const Community = () => (
-  <Container>
-    <Tabs>
-      <Tab title="Kent C. Dodds">
-        <CommunityGuy src="kent" title="Kent C. Dodds" twitter="kentcdodds" />
-      </Tab>
-      <Tab title="Mark Dalgleish">
-        <CommunityGuy
-          src="mark"
-          title="Mark Dalgleish"
-          twitter="markdalgleish"
-        />
-      </Tab>
-    </Tabs>
-  </Container>
-);
+const Community = () => {
+  const { clippy } = useClippy();
+
+  useEffect(() => {
+    clippy.play('GetTechy');
+  }, [clippy]);
+
+  return (
+    <Container>
+      <Tabs>
+        <Tab title="Kent C. Dodds">
+          <CommunityGuy src="kent" title="Kent C. Dodds" twitter="kentcdodds" />
+        </Tab>
+        <Tab title="Mark Dalgleish">
+          <CommunityGuy
+            src="mark"
+            title="Mark Dalgleish"
+            twitter="markdalgleish"
+          />
+        </Tab>
+      </Tabs>
+    </Container>
+  );
+};
 
 export default Community;
