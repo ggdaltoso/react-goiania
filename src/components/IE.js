@@ -25,7 +25,7 @@ const IE = ({ onClose }) => {
     >
       <Frame boxShadow="in" bg="white" height={463} pl={1} pt={1} mt={84}>
         <DivImage
-          src="/imgs/ie_header.png"
+          src="/imgs/ie_header2.png"
           style={{
             position: 'absolute',
             top: 20,
