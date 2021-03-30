@@ -58,7 +58,7 @@ const AboutMe = ({ onClose }) => {
             />
           </Frame>
 
-          <Frame ml="20" boxShadow="none" bg="transparent" width="100%">
+          <Frame ml={20} boxShadow="none" bg="transparent" width="100%">
             <h2 style={{ marginTop: 0 }}>Gabriel Daltoso</h2>
             <p>
               Falo que sou front-end mas tento centralizar uma div desde 2014.

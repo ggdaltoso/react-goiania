@@ -113,6 +113,7 @@ const FirstContrib = () => {
           <img
             alt="Foto do email nomeando React95 para o Open Source Awards"
             src="/imgs/mail.png"
+            width={750}
           />
         </Fade>
       </Frame>

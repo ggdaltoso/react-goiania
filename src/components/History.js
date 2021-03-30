@@ -4,7 +4,7 @@ import { Button, Modal } from '@react95/core';
 import { useClippy } from '@react95/clippy';
 import styled from 'styled-components';
 
-import { Birth, FirstContrib, Future, Nowadays, Reward } from './Steps';
+import { Birth, FirstContrib, Future, Nowadays, Community } from './Steps';
 
 import { DivImage, Container } from './Steps/common';
 
@@ -36,7 +36,7 @@ const History = ({ onClose }) => {
 
   return (
     <Modal
-      width="1000"
+      width="800"
       height="600"
       icon="access_219_32x32_4bit"
       title="React95 - a história"
@@ -78,6 +78,9 @@ const History = ({ onClose }) => {
                 src="/imgs/conference/ganhei_mano.jpg"
               />
             </Container>
+          </Step>
+          <Step id="community">
+            <Community />
           </Step>
           <Step id="nowadays">
             <Nowadays />
