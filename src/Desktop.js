@@ -17,6 +17,17 @@ const AppStyle = createGlobalStyle`
   }
 `;
 
+const Link = styled.a.attrs({
+  target: '_blank',
+  rel: 'noopener noreferrer',
+})`
+  flex-grow: 1;
+  height: 30;
+  padding-top: 9;
+  text-decoration: none;
+  color: inherit;
+`;
+
 const Desktop = styled.main`
   padding-top: 10px;
 `;
@@ -63,11 +74,8 @@ function App() {
         <TaskBar
           list={
             <List>
-              <List.Item icon="reader_closed_32x32_4bit">
-                Local Disk (C:)
-              </List.Item>
-              <List.Item icon="windows_explorer_32x32_4bit">
-                Windows Explorer
+              <List.Item icon="computer_3_32x32_4bit">
+                <Link href="https://github.com/React95/React95">React95</Link>
               </List.Item>
             </List>
           }
