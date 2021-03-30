@@ -1,4 +1,30 @@
+import React, { useEffect, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 import { Frame, List } from '@react95/core';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+`;
+
+const Fadder = styled.div`
+  animation: ${({ show }) => (show ? fadeIn : fadeOut)} 0.6s;
+`;
 
 const Container = ({ children, ...props }) => (
   <Frame
@@ -19,4 +45,24 @@ const Container = ({ children, ...props }) => (
   </Frame>
 );
 
-export default Container;
+const Fade = ({ show, children }) => {
+  const [render, setRender] = useState(show);
+
+  useEffect(() => {
+    if (show) setRender(true);
+  }, [show]);
+
+  const onAnimationEnd = () => {
+    if (!show) setRender(false);
+  };
+
+  return (
+    render && (
+      <Fadder show={show} onAnimationEnd={onAnimationEnd}>
+        {children}
+      </Fadder>
+    )
+  );
+};
+
+export { Container, Fade };

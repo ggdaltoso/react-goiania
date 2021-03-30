@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Frame, Checkbox } from '@react95/core';
 
-import Container from './common';
+import { Container } from './common';
 
 const CheckboxList = styled.div`
   display: flex;

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useCountUp } from 'react-countup';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Frame, Icon } from '@react95/core';
 
-import Container from './common';
+import { Container, Fade } from './common';
 import { useState } from 'react';
 
 function easeInOutQuint(t, b, c, d) {
@@ -11,7 +11,8 @@ function easeInOutQuint(t, b, c, d) {
   return (c / 2) * ((t -= 2) * t * t * t * t + 2) + b;
 }
 
-const FIRST_CONTRIB = '20';
+const FIRST_CONTRIB = 20;
+const NOMINATION_EMAIL = 200;
 
 const Header = styled.header`
   display: flex;
@@ -25,22 +26,11 @@ const Header = styled.header`
   }
 `;
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-`;
-
-const ContribImage = styled.img`
-  animation: ${fadeIn} 1s linear;
-`;
-
 const FirstContrib = () => {
   const [showContrib, toggleContrib] = useState(false);
+  const [firstStop, toggleFirstStop] = useState(false);
+  const [showMail, toggleMail] = useState(false);
+
   const { countUp, pauseResume } = useCountUp({
     start: 0,
     end: 1548,
@@ -50,11 +40,26 @@ const FirstContrib = () => {
   });
 
   useEffect(() => {
-    if (countUp === FIRST_CONTRIB) {
+    if (Number(countUp) === FIRST_CONTRIB && !firstStop) {
       pauseResume();
       toggleContrib(true);
+      toggleFirstStop(true);
     }
-  }, [countUp, pauseResume, toggleContrib]);
+
+    if (Number(countUp) >= NOMINATION_EMAIL && !showMail) {
+      pauseResume();
+      toggleMail(true);
+      pauseResume();
+    }
+  }, [
+    countUp,
+    firstStop,
+    showMail,
+    pauseResume,
+    toggleContrib,
+    toggleMail,
+    toggleFirstStop,
+  ]);
 
   return (
     <Container>
@@ -82,13 +87,35 @@ const FirstContrib = () => {
       <br />
       <br />
       <br />
-      {showContrib && (
-        <ContribImage
-          alt="Foto do pull request da primeira contribuição"
-          src="/imgs/firstcontrib.png"
-          onClick={pauseResume}
-        />
-      )}
+      <Frame
+        width="100%"
+        bg="white"
+        height={390}
+        boxShadow="in"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        padding={10}
+      >
+        <Fade show={showContrib}>
+          <img
+            alt="Foto do pull request da primeira contribuição"
+            src="/imgs/firstcontrib.png"
+            onClick={() => {
+              pauseResume();
+
+              toggleContrib(false);
+            }}
+          />
+        </Fade>
+
+        <Fade show={showMail}>
+          <img
+            alt="Foto do email nomeando React95 para o Open Source Awards"
+            src="/imgs/mail.png"
+          />
+        </Fade>
+      </Frame>
     </Container>
   );
 };
