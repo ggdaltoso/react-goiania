@@ -34,7 +34,7 @@ const FirstContrib = () => {
   const { countUp, pauseResume } = useCountUp({
     start: 0,
     end: 1548,
-    delay: 0,
+    delay: 20,
     duration: 30,
     easingFn: easeInOutQuint,
   });
